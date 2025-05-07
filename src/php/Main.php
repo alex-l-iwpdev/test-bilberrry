@@ -183,7 +183,6 @@ class Main {
 			2
 		);
 		GF_Fields::register( new TestProductField() );
-		
 	}
 }
 
