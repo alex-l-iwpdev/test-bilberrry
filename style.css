@@ -8,4 +8,165 @@
  * Requires at least: 6.1
  * Tested up to: 6.6
  * Requires PHP: 8.3
+ * Text Domain: generatepress
  */
+
+header ul {
+	margin: 0;
+}
+
+header .menu {
+	display: flex;
+	margin: 0;
+	gap: 2.5rem;
+}
+
+header .menu li * {
+	margin: 0;
+}
+
+header .menu li {
+	position: relative;
+	list-style: none;
+}
+
+header .menu a {
+	text-decoration: none;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+}
+
+header .menu > li > a {
+	padding: 20px 0;
+	color: #b5b5b5;
+	gap: 10px;
+	transition: all 0.3s ease;
+}
+
+header .menu > li > a:hover {
+	color: #2721e6;
+}
+
+header .menu > li.current_page_item > a {
+	color: #2721e6;
+}
+
+header .menu > li:has(ul) > a:hover:after {
+	border-color: #2721e6;
+}
+
+header .menu .mega-menu-columns-wrapper .container {
+	max-width: 700px
+}
+
+header .menu .mega-menu-columns-wrapper {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	min-width: max-content;
+	padding: 2.5rem 1rem;
+	box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
+	border-radius: 0.25rem;
+	background: #fff;
+	z-index: 10;
+	display: none;
+}
+
+header .menu .mega-menu-columns-wrapper.align-right {
+	right: 0;
+	left: inherit;
+}
+
+header .menu .has-mega-menu:has(ul) > a:after {
+	position: relative;
+	content: '';
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	border-bottom: 1px solid #b5b5b5;
+	border-right: 1px solid #b5b5b5;
+	transform: rotate(45deg);
+	transition: all 0.3s ease;
+}
+
+header .menu .has-mega-menu:has(ul):hover:before {
+	content: '';
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
+	bottom: -1px;
+	transform: translateY(50%) rotate(45deg);
+	left: 1.25rem;
+	background: #fff;
+}
+
+header .menu .has-mega-menu:has(ul):hover:after {
+	content: '';
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	bottom: -1px;
+	transform: translateY(50%) rotate(45deg);
+	left: 1.25rem;
+	background: #fff;
+	z-index: 11;
+}
+
+header .menu .has-mega-menu:has(ul):hover .mega-menu-columns-wrapper {
+	display: block;
+}
+
+header .inside-header {
+	gap: 5rem;
+}
+
+header .menu h5 {
+	font-size: 0.875rem;
+	font-weight: 700;
+	margin-bottom: 1.25rem;
+}
+
+header .list-group {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+header .list-group img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	padding: 10px;
+	background: #ccc;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+header .list-group li a {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	padding-left: 3.725rem;
+	font-size: 0.875rem;
+}
+
+header .list-group li a strong {
+	font-weight: 700;
+	color: #000;
+	transition: all 0.3s ease;
+}
+
+header .list-group li a span {
+	color: #b5b5b5;
+	transition: all 0.3s ease;
+}
+
+header .list-group li a:hover span,
+header .list-group li a:hover strong {
+	color: #2721e6;
+}
