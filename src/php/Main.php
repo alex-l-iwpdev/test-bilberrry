@@ -47,8 +47,9 @@ class Main {
 	 * @return bool|string
 	 */
 	public function filter_content() {
-
+		//phpcs:disable
 		return print_r( self::get_sorted_jobs_array(), true );
+		//phpcs:enable
 	}
 
 	/**
@@ -114,10 +115,12 @@ class Main {
 	 */
 	public function change_menu_walker(): void {
 		if ( has_nav_menu( 'primary' ) ) {
-			wp_nav_menu( [
-				'theme_location' => 'primary',
-				'walker'         => new MegaMenu(),
-			] );
+			wp_nav_menu(
+				[
+					'theme_location' => 'primary',
+					'walker'         => new MegaMenu(),
+				]
+			);
 		}
 	}
 
@@ -170,10 +173,16 @@ class Main {
 	 * @return void
 	 */
 	public function gf_register(): void {
-		add_action( 'gform_field_standard_settings', [
-			'Iwpdev\Bilberrry\GravityForms\TestProductField',
-			'render_custom_settings',
-		], 10, 2 );
+		add_action(
+			'gform_field_standard_settings',
+			[
+				'Iwpdev\Bilberrry\GravityForms\TestProductField',
+				'render_custom_settings',
+			],
+			10,
+			2
+		);
+		
 		GF_Fields::register( new TestProductField() );
 	}
 }

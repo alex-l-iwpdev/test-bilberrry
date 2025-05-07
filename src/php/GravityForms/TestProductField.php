@@ -25,14 +25,14 @@ class TestProductField extends GF_Field {
 	/**
 	 * Render custom settings.
 	 *
-	 * @param int $position
-	 * @param int $form_id
+	 * @param int $position Position.
+	 * @param int $form_id  From id.
 	 *
 	 * @return void
 	 */
 	public static function render_custom_settings( $position, $form_id ) {
 
-		if ( $position == 25 ) {
+		if ( $position === 25 ) {
 			?>
 			<li class="test_product_image_setting field_setting">
 				<label for="field_image_url"><?php esc_html_e( 'Image', 'gravityforms' ); ?></label>
@@ -149,7 +149,8 @@ class TestProductField extends GF_Field {
 	 */
 	public function get_value_submission( $field_values, $get_from_post_global_var = true ) {
 
-		$value                                         = parent::get_value_submission( $field_values, $get_from_post_global_var );
+		$value = parent::get_value_submission( $field_values, $get_from_post_global_var );
+
 		$value[ $this->id . '_copy_values_activated' ] = (bool) rgpost( 'input_' . $this->id . '_copy_values_activated' );
 
 		return $value;
@@ -160,7 +161,7 @@ class TestProductField extends GF_Field {
 	 *
 	 * @param array        $form  From.
 	 * @param string|array $value Value.
-	 * @param null|array   $entry
+	 * @param null|array   $entry Entry.
 	 *
 	 * @return false|string
 	 */

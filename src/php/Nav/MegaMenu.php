@@ -49,7 +49,8 @@ class MegaMenu extends Walker_Nav_Menu {
 		$attributes = '';
 		foreach ( $atts as $attr => $value ) {
 			if ( ! empty( $value ) ) {
-				$value      = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+				$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+
 				$attributes .= ' ' . $attr . '="' . $value . '"';
 			}
 		}
@@ -76,7 +77,8 @@ class MegaMenu extends Walker_Nav_Menu {
 							$output .= '<li>';
 							$output .= '<a class="icon-link" href="' . esc_url( $menu_item['item_links'] ?? '#' ) . '">';
 							if ( ! empty( $menu_item['menu_icon'] ) ) {
-								$image  = wp_get_attachment_image(
+
+								$image = wp_get_attachment_image(
 									$menu_item['menu_icon']['id'],
 									'full',
 									'',
@@ -85,6 +87,7 @@ class MegaMenu extends Walker_Nav_Menu {
 										'alt'   => get_the_title( $menu_item['menu_icon']['id'] ),
 									]
 								);
+
 								$output .= $image;
 							}
 							$output .= '<strong>' . esc_html( $menu_item['item_title'] ?? '' ) . '</strong>';
