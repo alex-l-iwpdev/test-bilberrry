@@ -182,8 +182,8 @@ class Main {
 			10,
 			2
 		);
-		
 		GF_Fields::register( new TestProductField() );
+		
 	}
 }
 

@@ -32,7 +32,7 @@ class TestProductField extends GF_Field {
 	 */
 	public static function render_custom_settings( $position, $form_id ) {
 
-		if ( $position === 25 ) {
+		if ( 25 === $position ) {
 			?>
 			<li class="test_product_image_setting field_setting">
 				<label for="field_image_url"><?php esc_html_e( 'Image', 'gravityforms' ); ?></label>
